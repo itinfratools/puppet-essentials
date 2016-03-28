@@ -25,6 +25,13 @@ RUN yum clean all
 
 # Installing puppet
 RUN yum -y install puppet-3.6.2-3.el7
+RUN yum -y install vim
+
+# Copying VIM SyntaxHightlight to container
+RUN mkdir -p /root/.vim
+ADD src/vim_syntax_highlight_puppet /root/.vim/
+
+
 #2.7.26-2.el6
 
 # Installing nfs server
